@@ -12,8 +12,6 @@ app.set('view engine', 'mustache')
 app.set('views', __dirname + '/views')
 
 app.use( cors() )
-app.use( (req, res, next) => req.method == 'OPTIONS' ? res.sendStatus(200) : next() )
-
 app.use( bodyParser.urlencoded({ extended: true }) )
 app.use( bodyParser.json() )
 
