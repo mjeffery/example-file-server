@@ -1,0 +1,21 @@
+{
+  "name": "ajax-simple-example-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple 'file' server for AJAX examples",
+  "main": "server.js",
+  "engines": {
+    "node": "6.10.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "mjeffery",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "mustache-express": "^1.2.4"
+  }
+}

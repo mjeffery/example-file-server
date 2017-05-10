@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-us">
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h1>Contents of file server:</h1>
+		<ul>
+			{{#files}}
+			<li><a href="/{{name}}">{{name}}</a></li>
+			{{/files}}
+		</ul>
+		{{^files}}
+		<p>file server is empty</p>
+		{{/files}}
+		{{#settings}}
+		<form action="/settings" method="post">
+			<strong>API Delay</strong><br/>
+			min: <input name="apiDelay.min" value="{{apiDelay.min}}"> ms <br/>
+			max: <input name="apiDelay.max" value="{{apiDelay.max}}"> ms <br/>
+			<button type="submit">Update</button>
+		</form>
+		{{/settings}}
+	</body>
+</html>
