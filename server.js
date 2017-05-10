@@ -11,9 +11,9 @@ app.engine('mustache', mustache() )
 app.set('view engine', 'mustache')
 app.set('views', __dirname + '/views')
 
+app.use( cors() )
 app.use( bodyParser.urlencoded({ extended: true }) )
 app.use( bodyParser.json() )
-app.use( cors() )
 
 app.use( require('./routes') )
 app.use( require('./api') )
