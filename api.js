@@ -44,4 +44,13 @@ api.get('/:filename', (req, res) => {
 	res.sendStatus(404)
 })
 
+api.delete('/api/files/:filename', (req, res) => {
+	let { filename: name } = req.params
+	let length = storage.files.length
+
+	storage.files = storage.files.filter( file => file.name != name )
+
+	res.sendStatus( storage.files.length < length ? 200 : 404)
+})
+
 module.exports = api
