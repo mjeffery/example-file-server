@@ -18,6 +18,6 @@ app.use( bodyParser.json() )
 app.use( require('./routes') )
 app.use( require('./api') )
 
-app.options('*', cors() )
+app.options('*', (req, res) => res.send(200) )
 
 app.listen(PORT, () => console.log(`example app is listening on port: ${PORT}`) )
