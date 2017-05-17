@@ -17,14 +17,14 @@ window.example = window.example || {};
 		
 		xhr.open(method, url);
 		xhr.onload = e => {
-				if(xhr.status  == 200) {
-			resolve(xhr.response)
-		  } else if(xhr.status >= 400) {
+		  if(xhr.status >= 400) {
 			reject({ 
 				status: xhr.status,
 			  message: xhr.statusText,
 				body: xhr.response
 			})
+		  } else {
+			  resolve(xhr.response)
 		  }
 		}
 		
